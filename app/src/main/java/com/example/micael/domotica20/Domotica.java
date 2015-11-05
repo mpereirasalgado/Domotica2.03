@@ -155,5 +155,7 @@ public class Domotica extends AppCompatActivity {
         uri = Uri.parse("tel:"+message+"");
         Intent intent = new Intent(Intent.ACTION_CALL,uri);
         startActivity(intent);
+
     }
+    //comit rubens
 }
