@@ -157,5 +157,5 @@ public class Domotica extends AppCompatActivity {
         startActivity(intent);
 
     }
-    //comit rubensss
+    //comit rubens
 }
