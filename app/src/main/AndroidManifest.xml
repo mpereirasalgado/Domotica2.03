@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.micael.domotica20" >
 
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.FLASHLIGHT"/>
-    <uses-permission android:name="android.permission.VIBRATE"/>
-    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-feature
         android:name="android.hardware.camera"
-        android:required="true"/>
-
+        android:required="true" />
     <uses-feature
         android:name="android.hardware.camera.flash"
-        android:required="true"
-        />
-
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -29,6 +26,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".DisplayMessageActivity"
+            android:label="@string/DisplayMessageActivity"
+            android:parentActivityName=".Domotica" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.micael.domotica20.Domotica" />
         </activity>
     </application>
 

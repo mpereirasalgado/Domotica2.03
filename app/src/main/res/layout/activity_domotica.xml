@@ -15,25 +15,15 @@
 
 
     <TextView
-        android:text="DALE AHÍ"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/Titulo"
-        android:textStyle="bold"
-        android:textSize="60dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="LUZ"
         android:id="@+id/LabelLuz"
-        android:layout_above="@+id/LabelIntensidad"
+        android:layout_alignBaseline="@+id/botonLuz"
+        android:layout_alignBottom="@+id/botonLuz"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="71dp" />
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -41,7 +31,8 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="INTENSIDAD"
         android:id="@+id/LabelIntensidad"
-        android:layout_centerVertical="true"
+        android:layout_marginTop="23dp"
+        android:layout_below="@+id/botonLuz"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -50,7 +41,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="clickBotonLuz"
-        android:layout_alignBottom="@+id/LabelLuz"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -61,11 +51,11 @@
         android:max="100"
         android:progress="50"
         android:indeterminate="false"
-        android:layout_alignRight="@+id/botonLuz"
-        android:layout_alignEnd="@+id/botonLuz"
-        android:layout_below="@+id/LabelLuz"
-        android:layout_alignBottom="@+id/LabelIntensidad"
         android:layout_gravity="right"
+        android:layout_alignBottom="@+id/LabelIntensidad"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/LabelIntensidad"
         android:layout_toRightOf="@+id/LabelIntensidad"
         android:layout_toEndOf="@+id/LabelIntensidad" />
 
@@ -73,9 +63,100 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/intens"
+        android:textSize="40dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="75dp"
-        android:textSize="40dp" />
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/activitynuevo"
+        android:layout_marginTop="42dp"
+        android:layout_below="@+id/LabelIntensidad"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/buscar"
+        android:layout_alignEnd="@+id/buscar"
+        android:hint="Mensaje"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Activity 2"
+        android:id="@+id/botoncambiar"
+        android:onClick="sendMessage"
+        android:layout_alignBaseline="@+id/activitynuevo"
+        android:layout_alignBottom="@+id/activitynuevo"
+        android:layout_alignLeft="@+id/botonLuz"
+        android:layout_alignStart="@+id/botonLuz" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buscar"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/intens"
+        android:layout_toStartOf="@+id/intens"
+        android:hint="Buscar en la web"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SEARCH"
+        android:id="@+id/botonIr"
+        android:onClick="abrirPagina"
+        android:layout_alignBottom="@+id/buscar"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GO"
+        android:id="@+id/botonMapa"
+        android:onClick="abrirMapa"
+        android:layout_below="@+id/botonIr"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="26dp"
+        android:layout_alignLeft="@+id/botonLLamar"
+        android:layout_alignStart="@+id/botonLLamar" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/busacarSitio"
+        android:layout_alignBottom="@+id/botonMapa"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/buscar"
+        android:layout_alignEnd="@+id/buscar"
+        android:hint="Buscar en la maps"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CALL"
+        android:id="@+id/botonLLamar"
+        android:layout_above="@+id/intens"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="23dp"
+        android:onClick="llamar"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:id="@+id/esNumero"
+        android:layout_alignBottom="@+id/botonLLamar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:hint="Tel:"/>
 
 </RelativeLayout>
